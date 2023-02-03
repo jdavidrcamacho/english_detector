@@ -5,11 +5,7 @@ import pandas as pd
 import re
 from tqdm import tqdm
 
-
-path = r'~\OneDrive - Brand Delta\General - BAT\data\modelled_data\english\Workflow_output\latest_output'
-df = pd.read_parquet(path + '\english_data_tagged_2023_01_13_04_20_20_PM_age18.parquet')
-
-def language_predictions_rules(df, column='cleaned_messge'):
+def language_predictions_rules(df, column='messge'):
     dataframe = df.copy().reset_index(drop=True)
     dataframe['language'] = 'Unknown'
 
